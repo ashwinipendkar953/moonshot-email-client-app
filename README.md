@@ -1,8 +1,26 @@
-# React + Vite
+# Email Client App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple email client application built with the MERN stack. It mimics the functionality of a typical email client, allowing users to view, filter, and manage emails.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Email List**: Displays a list of emails with pagination support.
+- **Email Filtering**: Users can filter emails by favorites, read/unread status.
+- **Email Body Viewer**: View the full email body in a modal or inline based on screen size.
+- **Responsive Design**: The application is responsive and works well on various screen sizes.
+
+## Technologies Used
+
+- **Frontend**: React, Redux, Bootstrap
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Additional Libraries**: DOMPurify for sanitizing HTML content
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/<your-username>/email-client-app-moonshot.git
+   cd email-client-app-moonshot
+   ```
