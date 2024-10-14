@@ -18,6 +18,6 @@ This is a simple email client application built with the ReactJS. It mimics the 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/email-client-app-moonshot.git
+   git clone https://github.com/ashwinipendkar953/email-client-app-moonshot.git
    cd email-client-app-moonshot
    ```
