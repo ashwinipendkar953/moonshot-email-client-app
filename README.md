@@ -1,6 +1,6 @@
 # Email Client App
 
-This is a simple email client application built with the MERN stack. It mimics the functionality of a typical email client, allowing users to view, filter, and manage emails.
+This is a simple email client application built with the ReactJs. It mimics the functionality of a typical email client, allowing users to view, filter, and manage emails.
 
 ## Features
 
@@ -12,9 +12,6 @@ This is a simple email client application built with the MERN stack. It mimics t
 ## Technologies Used
 
 - **Frontend**: React, Redux, Bootstrap
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Additional Libraries**: DOMPurify for sanitizing HTML content
 
 ## Installation
 

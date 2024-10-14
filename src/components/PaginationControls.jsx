@@ -1,10 +1,14 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchEmails } from "../features/email/emailSlice";
+import { useEffect } from "react";
 
 const PaginationControls = () => {
   const dispatch = useDispatch();
   const { currentPage, totalPages } = useSelector((state) => state.email);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {

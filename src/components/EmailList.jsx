@@ -56,6 +56,10 @@ const EmailList = () => {
         <div className="text-danger fw-semibold">{error}</div>
       )}
 
+      {filteredEmails.length === 0 && (
+        <div className="my-4 fs-2 text-capitalize">{`No emails in the "${activeFilter}" filter on this page.`}</div>
+      )}
+
       {filteredEmails.map((email) => {
         const isFavorite = favorites.some((fav) => fav.id === email.id);
         const isRead = readEmails.some((el) => el.id === email.id);
@@ -71,12 +75,14 @@ const EmailList = () => {
           >
             <div className="email-row">
               <div className="avatar">
-                <div className="avatar-text">{email?.from.name.charAt(0)}</div>
+                <div className="avatar-text">
+                  {email?.from?.name?.charAt(0)}
+                </div>
               </div>
               <div className="email-details">
                 <p className="mb-0">
                   <span className="me-1">From:</span>{" "}
-                  <span className="from-text">{email?.from.name}</span>{" "}
+                  <span className="from-text">{email?.from?.name}</span>{" "}
                   <span className="from-text">
                     &lt;
                     {email?.from.email}&gt;

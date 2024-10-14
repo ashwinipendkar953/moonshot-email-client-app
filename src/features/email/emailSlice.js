@@ -62,6 +62,15 @@ const emailSlice = createSlice({
       }
     },
 
+    removeFromFavorites: (state, action) => {
+      const email = action.payload;
+      const filterFavorites = state.favorites.filter(
+        (el) => el.id !== email.id
+      );
+      state.favorites = filterFavorites;
+      localStorage.setItem("favorites", JSON.stringify(state.favorites));
+    },
+
     setReadEmails: (state, action) => {
       const email = action.payload;
       const exists = state.readEmails.find((el) => el.id === email.id);
@@ -81,7 +90,6 @@ const emailSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchEmails.fulfilled, (state, action) => {
-        console.log(action);
         state.status = "success";
         state.emails = action.payload?.data.list;
         state.totalEmails = action.payload?.data.total;
@@ -110,6 +118,7 @@ const emailSlice = createSlice({
 export const {
   setSelectedEmail,
   setFavorites,
+  removeFromFavorites,
   setReadEmails,
   setActiveFilter,
 } = emailSlice.actions;

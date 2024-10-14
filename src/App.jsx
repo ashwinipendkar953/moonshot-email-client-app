@@ -4,19 +4,27 @@ import EmailBody from "./components/EmailBody";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import EmailBodyModal from "./components/EmailBodyModel";
+import { Modal } from "bootstrap/dist/js/bootstrap.bundle";
 
 const App = () => {
   const { selectedEmail } = useSelector((state) => state.email);
   const [isMediumOrSmaller, setIsMediumOrSmaller] = useState(false);
 
-  // Detect if screen is medium size or smaller
+  useEffect(() => {
+    if (isMediumOrSmaller && selectedEmail) {
+      const modalElement = document.getElementById("emailBodyModal");
+      const modal = new Modal(modalElement);
+      modal.show();
+    }
+  }, [isMediumOrSmaller, selectedEmail]);
+
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMediumOrSmaller(window.innerWidth <= 992);
     };
 
-    checkScreenSize(); // Set initial state
-    window.addEventListener("resize", checkScreenSize); // Update on resize
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
 
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
