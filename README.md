@@ -1,6 +1,6 @@
 # Email Client App
 
-This is a simple email client application built with the ReactJs. It mimics the functionality of a typical email client, allowing users to view, filter, and manage emails.
+This is a simple email client application built with the ReactJS. It mimics the functionality of a typical email client, allowing users to view, filter, and manage emails.
 
 ## Features
 
